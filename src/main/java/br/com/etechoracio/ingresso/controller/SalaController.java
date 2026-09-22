@@ -14,15 +14,15 @@ import java.util.List;
 @CrossOrigin("*")
 public class Controller {
 
-    private final Service salaService;
+    private final Service service;
 
-    public Controller(Service salaService) {
-        this.salaService = salaService;
+    public Controller(Service service) {
+        this.service = service;
     }
 
     @GetMapping
     public List<SalaResponseDTO> listarAtivas() {
-        return salaService.listarAtivas();
+        return service.listarAtivas();
     }
 
 }
