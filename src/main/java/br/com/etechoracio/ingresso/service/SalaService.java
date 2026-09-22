@@ -1,6 +1,7 @@
 package br.com.etechoracio.ingresso.service;
 
 import br.com.etechoracio.ingresso.dto.SalaResponseDTO;
+import br.com.etechoracio.ingresso.entity.Sala;
 import br.com.etechoracio.ingresso.mapper.SalaMapper;
 import br.com.etechoracio.ingresso.repository.SalaRepository;
 
@@ -17,7 +18,7 @@ public class SalaService {
         this.salaMapper = salaMapper;
     }
 
-    public List<SalaResponseDTO> listarAtivas() {
+    public List<SalaResponseDTO> listarAtivas(Long id) {
         return salaMapper.toDTO(SalaRepository.findBydataExclusaoIsNull());
     }
 

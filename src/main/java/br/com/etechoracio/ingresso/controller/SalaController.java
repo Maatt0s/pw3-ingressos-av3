@@ -21,7 +21,7 @@ public class SalaController {
     }
 
     @GetMapping
-    public List<SalaResponseDTO> listarAtivas() {
+    public List<SalaResponseDTO> listarAtivas(Long id) {
         return salaService.listarAtivas();
     }
 
