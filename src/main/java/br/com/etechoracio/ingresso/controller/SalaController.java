@@ -1,7 +1,7 @@
 package br.com.etechoracio.ingresso.controller;
 
 import br.com.etechoracio.ingresso.dto.SalaResponseDTO;
-import br.com.etechoracio.ingresso.service.Service;
+import br.com.etechoracio.ingresso.service.SalaService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,17 +12,17 @@ import java.util.List;
 @RestController
 @RequestMapping("/salas")
 @CrossOrigin("*")
-public class Controller {
+public class SalaController {
 
-    private final Service service;
+    private final SalaService salaService;
 
-    public Controller(Service service) {
-        this.service = service;
+    public SalaController(SalaService salaService) {
+        this.salaService = salaService;
     }
 
     @GetMapping
     public List<SalaResponseDTO> listarAtivas() {
-        return service.listarAtivas();
+        return salaService.listarAtivas();
     }
 
 }
